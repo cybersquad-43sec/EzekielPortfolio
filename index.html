@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ezekiel Anane - Home</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar">
+   <div class="logo" style="color: white; font-size: 2rem; font-weight: 700; line-height: 0.8;"> 
+  My Portfolio<br>
+  <span style="font-size: 1.1rem; font-weight: 400;">Ezekiel Anane</span> <br>
+  <span style="font-size: 0.8rem; font-weight: 400;">Index No: 104240780N</span> <br>
+  <span style="font-size: 0.7rem; font-weight: 400;">Course: DBS - IT</span>
+</div>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="impact.html">Impact</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="text">
+        <h1 id="type-title"></h1>
+        <p class="sub">Aspiring Software Engineer | Professional Athlete | IT Enthusiast</p>
+        <h2>I am a <span id="typing"></span></h2>
+      </div>
+      <img src="images/Me.jpg" alt="Ezekiel's Photo" class="profile-pic">
+    </div>
+  </section>
+
+  
+  <footer>
+   <div class="social-links">
+  <a href="https://instagram.com/ezekielanane" target="_blank">
+    <img src="images/276bf8617ae91da28c3e19ddf7ce8b59.jpg" alt="Instagram" width="24"> Instagram
+  </a>
+
+  <a href="https://facebook.com/ezekielanane" target="_blank">
+    <img src="images/3d87df1dbf73f377043d841be99a2c67.jpg" alt="Facebook" width="24"> Facebook
+  </a>
+
+  <a href="https://pinterest.com/ezekielanane" target="_blank">
+    <img src="images/6afe83efe03781042b6f3ef6e4066d1b.jpg" alt="Pinterest" width="24"> Pinterest
+  </a>
+</div>
+
+    <p style="color: white;">&copy; 2025 Ezekiel Anane • Email: stusainleobolt@gmail.com</p>
+  </footer>
+  
+  
+   <script>
+  // First typing: "Hi, I'm Ezekiel Anane"
+  (function() {
+    const text = "Hi, I'm Ezekiel Anane";
+    const el = document.getElementById("type-title");
+    let i = 0;
+
+    function type() {
+      if (i <= text.length) {
+        el.textContent = text.slice(0, i);
+        i++;
+        setTimeout(type, 120);
+      } else {
+        i = 0; // restart when finished
+        setTimeout(type, 1000);
+      }
+    }
+
+    type();
+  })();
+</script>
+
+<script>
+  // Second typing: rotating words
+  (function() {
+    const texts = ["Student", "IT Enthusiast", "Freelancer", "Professional Athlete"];
+    let count = 0;
+    let index = 0;
+    let currentText = "";
+    let letter = "";
+
+    function type() {
+      if (count === texts.length) count = 0;
+      currentText = texts[count];
+      letter = currentText.slice(0, ++index);
+
+      document.getElementById("typing").textContent = letter;
+
+      if (letter.length === currentText.length) {
+        setTimeout(erase, 1000);
+      } else {
+        setTimeout(type, 120);
+      }
+    }
+
+    function erase() {
+      letter = currentText.slice(0, --index);
+      document.getElementById("typing").textContent = letter;
+
+      if (letter.length === 0) {
+        count++;
+        setTimeout(type, 200);
+      } else {
+        setTimeout(erase, 80);
+      }
+    }
+
+    type();
+  })();
+</script>
+
+</body>
+</html>
+
